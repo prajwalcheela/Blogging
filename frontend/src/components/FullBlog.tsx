@@ -28,7 +28,7 @@ export const FullBlog = ({ blog }: { blog: blog | undefined }) => {
                   {blog?.author.name || "Anonymous"}
                 </div>
                 <div className="pt-2 text-slate-500">
-                  Let's spread the knowledge
+                  Let's spread the knowledge.
                 </div>
               </div>
             </div>
