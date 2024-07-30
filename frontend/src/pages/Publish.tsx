@@ -90,7 +90,7 @@ function TextEditor({ onChange }: { onChange: (value: string) => void }) {
               onChange={onChange}
               theme="snow"
               modules={modules}
-              className="focus:outline-none block w-full px-0 text-sm text-gray-800 bg-white border h-screen"
+              className="focus:outline-none block w-full px-0 text-sm text-gray-800 bg-white border "
             />
             {/* <textarea
               onChange={onChange}
