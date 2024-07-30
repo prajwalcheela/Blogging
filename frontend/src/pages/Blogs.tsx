@@ -25,7 +25,7 @@ const Blogs = () => {
     <>
       <AppBar />
       <div className="h-screen flex justify-center  ">
-        <div className=" space-y-5  max-w-sm  md:max-w-md lg:max-w-3xl">
+        <div className=" space-y-5 max-w-xs sm:max-w-sm  md:max-w-md lg:max-w-3xl">
           {blogs.map((blog) => (
             <BlogCard
               id={blog.id}

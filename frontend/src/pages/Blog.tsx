@@ -36,7 +36,7 @@ export const Blog = () => {
 
 const Skeleton = () => {
   return (
-    <div className="grid grid-cols-12 px-10  pt-200  gap-x-3 pt-12 max-w-full min-w-5xl">
+    <div className="grid grid-cols-12 px-10  pt-200  gap-x-3 pt-12 max-w-full sm:min-w-5xl">
       <div className="h-screen w-full col-span-8 bg-gray-200 rounded-xl animate-pulse mt-2"></div>
       <div className="h-20 w-full col-span-4 bg-gray-200 rounded-xl animate-pulse mt-2"></div>
     </div>
