@@ -20,7 +20,7 @@ const Blogs = () => {
       </>
     );
   }
-  console.log(loading, blogs);
+  // console.log(loading, blogs);
   return (
     <>
       <AppBar />
