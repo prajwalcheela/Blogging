@@ -61,6 +61,7 @@ const Auth = () => {
         />
         <LabelledInput
           label="Password"
+          type="password"
           placeholder=""
           onChange={(e) => {
             setSignupInputs({

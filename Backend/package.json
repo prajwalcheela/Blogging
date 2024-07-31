@@ -8,11 +8,13 @@
     "@prajwalcheela/blogging-common": "^1.0.1",
     "@prisma/client": "^5.17.0",
     "@prisma/extension-accelerate": "^1.1.0",
+    "bcryptjs": "^2.4.3",
     "hono": "^4.5.0",
     "prisma": "^5.17.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240529.0",
+    "@types/bcryptjs": "^2.4.6",
     "wrangler": "^3.66.0"
   }
 }

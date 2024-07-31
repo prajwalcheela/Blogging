@@ -50,6 +50,7 @@ const AuthLogin = () => {
         />
         <LabelledInput
           label="Password"
+          type="password"
           placeholder=""
           onChange={(e) => {
             setSignupInputs({

@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { decode, sign, verify } from "hono/jwt";
 import { signinInput, signupInput } from "@prajwalcheela/blogging-common";
-
+import { hash, compare } from "bcryptjs";
 export const userRoute = new Hono<{
   Bindings: {
     DATABASE_URL: string;
@@ -22,10 +22,11 @@ userRoute.post("/signup", async (c) => {
       datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate());
 
+    const hashedPassword = await hash(body.password, 10);
     const user = await prisma.user.create({
       data: {
         email: body.email,
-        password: body.password,
+        password: hashedPassword,
         name: body.name || "user",
       },
     });
@@ -50,9 +51,12 @@ userRoute.post("/signin", async (c) => {
     const user = await prisma.user.findUnique({
       where: {
         email: body.email,
-        password: body.password,
       },
     });
+    const isMatch = await compare(body.password, user?.password || "cf");
+    if (!isMatch) {
+      return c.json({ message: "Invalid Password" }, 403);
+    }
     if (!user) throw new Error("Invalid email or password");
     const token = await sign({ id: user.id }, c.env.JWT_KEY);
     return c.json({ token });
