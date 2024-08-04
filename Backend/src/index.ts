@@ -1,6 +1,3 @@
-import { PrismaClient } from "@prisma/client/edge";
-import { withAccelerate } from "@prisma/extension-accelerate";
-
 import { Hono } from "hono";
 import { userRoute } from "./routes/user";
 import { blogRoute } from "./routes/blog";
@@ -13,6 +10,7 @@ const allowedOrigins = [
   "https://blogging-8vmmomogo-prajwalcheelas-projects.vercel.app/",
   "https://blogging-liard-chi.vercel.app/",
   // "http://localhost:5173/",
+  // "http://localhost:5173",
 ];
 
 app.use(
@@ -22,7 +20,7 @@ app.use(
       if (origin && allowedOrigins.includes(origin)) {
         return origin;
       }
-      // console.log(`Origin ${origin} is not allowed`);
+      console.log(`Origin ${origin} is not allowed`);
       return null;
     },
   })

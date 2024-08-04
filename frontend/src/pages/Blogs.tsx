@@ -11,7 +11,7 @@ const Blogs = () => {
       <>
         <AppBar />
         <div className="flex justify-center h-screen ">
-          <div className="flex flex-col space-y-5 min-w-3xl ">
+          <div className="flex flex-col space-y-5 md:min-w-3xl  ">
             <BlogCardSkeleton />
             <BlogCardSkeleton />
             <BlogCardSkeleton />
@@ -22,7 +22,7 @@ const Blogs = () => {
   }
   // console.log(loading, blogs);
   return (
-    <>
+    <div className="overflow-x-hidden">
       <AppBar />
       <div className="h-screen flex justify-center  ">
         <div className=" space-y-5 max-w-xs sm:max-w-sm  md:max-w-md lg:max-w-3xl">
@@ -37,7 +37,7 @@ const Blogs = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
